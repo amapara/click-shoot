@@ -3,4 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :sale_items, :bookings
+  validates :username, uniqueness: true, presence: true
+  #change password format
+  validates :password, presence: true, format: { with: /\A.*@.*\.com\z/ }
 end
