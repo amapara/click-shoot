@@ -1,5 +1,5 @@
 class SaleItem < ApplicationRecord
-  belongs_to :username
+  belongs_to :user
 
   validates :model, presence: true
   validates :availability, presence: true
