@@ -1,4 +1,7 @@
-class SaleItemsController < ApplicationController
+class SaleItemsController < ApplicationControlle
+
+  def new
+  end
   def index
     @sale_items = SaleItem.all
   end

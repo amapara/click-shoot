@@ -6,4 +6,7 @@ Rails.application.routes.draw do
     resources :bookings
    end
    get '/dashboard', to: 'dashboards#view'
+
+   #intention: address of T&C page
+   get 'pages/sell_w_us', to: 'pages#sell_w_us'
 end
