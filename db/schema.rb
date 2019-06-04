@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_182043) do
+ActiveRecord::Schema.define(version: 2019_06_04_134211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "sale_item_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "user_id"
+    t.float "total_price"
+    t.string "pick_up_location"
+    t.string "drop_off_location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sale_item_id"], name: "index_bookings_on_sale_item_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "sale_items", force: :cascade do |t|
+    t.string "model"
+    t.float "daily_rate"
+    t.float "set_up_rate"
+    t.bigint "user_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sale_items_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +53,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_182043) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "sale_items"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "sale_items", "users"
 end
