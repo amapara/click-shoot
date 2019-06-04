@@ -29,3 +29,4 @@ group :development, :test do
 end
 
 gem 'devise'
+gem 'searchkick', '~> 3.0'
