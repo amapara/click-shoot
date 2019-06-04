@@ -1,1 +1,72 @@
 // Specific CSS for your home-page
+// Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 800px;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 100px;
+  font-weight: bold;
+  margin: -13px;
+}
+
+
+.banner h2 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 80px;
+  font-weight: bold;
+  opacity: 0.7;
+  margin: -27px;
+}
+
+
+.banner h3 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 55px;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.flex-center {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.navbar {
+  height: 60px;
+  p {
+    color: orange;
+  }
+}
+
+.card-deck {
+  margin-top: 50px;
+  height: 100px;
+}
+
+#row_cards {
+  padding: 70px;
+}
+
+#row_search {
+  padding-top:80px;
+}
+.card {
+  width:100%;
+  margin-top: 20px;
+  padding: 70px;
+}
+
+
