@@ -9,10 +9,4 @@ Rails.application.routes.draw do
 
    #intention: address of T&C page
    get 'pages/sell_w_us', to: 'pages#sell_w_us'
-
-   #intention: create new listing with user upload
-   post '/listings/create', to: 'listings#create'
-
-   #intention: add newly created listing camera index w/ confirmation
-   patch '/listing/:id', to: 'listings#index'
 end
