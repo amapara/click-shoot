@@ -10,9 +10,9 @@ class SaleItemsController < ApplicationController
 
   def index
     if params[:city].present?
-      @sale_items = SaleItem.all
-    else
       @sale_items = SaleItem.where(city: params[:city])
+    else
+      @sale_items = SaleItem.all
     end
   end
 
