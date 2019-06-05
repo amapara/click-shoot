@@ -1,20 +1,16 @@
-<h1> This is the booking page</h1>
+<div class= 'text-center container'>
+<h1 class='text-secondary mt-3'>Your camera is ready to be picked up!</h1>
 
-
-
-<h2> Put info on the item here </h2>
-
-
-
-<h3> A confirm button goes here </h3>
-
-<h1>This is the show page</h1>
-  <h2>Item: <%= @sale_item.model %></h2>
-
-
-  <p>Daily Rate: <%= @sale_item.daily_rate %></p>
-  <p>Set Up Rate: <%= @sale_item.set_up_rate %></p>
-  <p>Start Time: <%= @sale_item.start_date %></p>
-  <p>End Time: <%= @sale_item.end_date %></p>
-  <p>------------------------------</p>
-
+<div class='card mt-3'>
+  <div class = 'img-fluid'>
+<%= image_tag 'canon.jpeg' %>
+  </div>
+  <h2>Model: Canon, <%= @sale_item.model %></h2>
+  <p>Daily Rate: <%= @sale_item.daily_rate %>0 €</p>
+  <p>Set Up Rate: <%= @sale_item.set_up_rate %>0 €</p>
+  <p><strong>Start Time: <%= @sale_item.start_date %></strong></p>
+  <p><strong>End Time: <%= @sale_item.end_date %></strong></p>
+</div>
+<div class="text-center mt-3">
+  <button class="btn btn-primary btn-lg" type="button">Confirm and proceed to payment</button>
+</div>
