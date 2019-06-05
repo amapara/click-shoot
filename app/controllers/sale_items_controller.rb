@@ -1,6 +1,5 @@
 class SaleItemsController < ApplicationController
 
-
   def show
     @sale_item = SaleItem.find(params[:id])
   end
@@ -9,9 +8,8 @@ class SaleItemsController < ApplicationController
     @sale_item = SaleItem.new
   end
 
-
   def index
-    if params[:city].nil?
+    if params[:city].present?
       @sale_items = SaleItem.all
     else
       @sale_items = SaleItem.where(city: params[:city])
