@@ -11,7 +11,7 @@
 
 <ol>
   <% @user.sale_items.each do |sale_item| %>
-    <% sale_item.booking.each do |booking| %>
+    <% sale_item.bookings.each do |booking| %>
       <li>
         <%= link_to("Message renter",messages_show_path) + booking.start_date + "---" + booking.end_date %>
       </li>

@@ -34,3 +34,16 @@ puts 'Create 10 fake sale items'
   )
   sale_item.save!
 end
+
+puts 'Create 100 fake bookings'
+
+100.times do
+  booking = Booking.new(
+    sale_item: SaleItem.all.sample,
+    start_date: Date.today + rand(1..30),
+    end_date: Date.today + rand(31..40),
+    user: User.all.sample,
+    pick_up_location: Faker::Address.street_name,
+    drop_off_location: Faker::Address.street_name)
+  booking.save!
+end
