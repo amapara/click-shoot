@@ -1,5 +1,7 @@
 class SaleItemsController < ApplicationController
+
   def new
+    @sale_item = SaleItem.new
   end
 
   def index
