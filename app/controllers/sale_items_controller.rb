@@ -1,5 +1,5 @@
 class SaleItemsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def show
     @sale_item = SaleItem.find(params[:id])
@@ -11,10 +11,10 @@ class SaleItemsController < ApplicationController
 
 
   def index
-    if params[:city].nil?
-      @sale_items = SaleItem.all
-    else
+    if params[:city].present?
       @sale_items = SaleItem.where(city: params[:city])
+    else
+      @sale_items = SaleItem.all
     end
   end
 
