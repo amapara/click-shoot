@@ -1,25 +1,28 @@
-<h1>hello <%= @user.email %></h1>
-<h2> User bookings </h2>
-<ol>
-    <%= @user.bookings.each do |booking| %>
-    <li>
-      <%= link_to("Message owner",messages_show_path) + booking.start_date + "---" + booking.end_date %>
+<h1><strong>hello <%= @user.email %>,</strong></h1>
+<br>
+<br>
+
+
+<h2 class= "align-items text-left" style="text-decoration: underline"> User bookings: </h2>
+<br>
+
+<ul style="text-decoration: none">
+    <% @user.bookings.each do |booking| %>
+    <li style="text-decoration: none">
+      <%= link_to("Message owner", messages_show_path) + booking.start_date + "---" + booking.end_date %>
     </li>
   <% end %>
-
-<h2> My items bookings </h2>
-
-<ol>
+<br>
+<br>
+<h2 class="align-items align-right"> My items bookings </h2>
+<ul style="text-decoration: none">
   <% @user.sale_items.each do |sale_item| %>
     <% sale_item.bookings.each do |booking| %>
       <li>
-        <%= link_to("Message renter",messages_show_path) + booking.start_date + "---" + booking.end_date %>
+        <%= link_to("Message renter", messages_show_path) + booking.start_date + "---" + booking.end_date %>
       </li>
     <% end %>
   <% end %>
-</ol>
-
-<h3> Ali - please clean and test </h3>
-
+</ul>
 
 
