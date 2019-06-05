@@ -5,7 +5,7 @@
 <ol>
 <% @sale_items.each do |sale_item| %>
 <li>
-  <%= link_to(sale_item.model, sale_item) + "---" + sale_item.daily_rate.to_s + "---" + sale_item.set_up_rate.to_s + "---" +sale_item.city %>, sale_item
+  <%= link_to(sale_item.model, sale_item) + "---" + sale_item.daily_rate.to_s + "---" + sale_item.set_up_rate.to_s %>, sale_item
 </li>
 <% end %>
 <h2> We need to add a filter to the each.do based on the user input for location on the previous page </h2>
