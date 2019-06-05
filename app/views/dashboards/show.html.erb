@@ -1,0 +1,8 @@
+<h1>hello <%= @user.email %></h1>
+<p> <%= @user.bookings %>
+  <%=  link_to "Message Renter", messages_show_path %>
+</p>
+
+<p> <%= @user.sale_items %>
+  <%= link_to "list item", new_sale_item_path %>
+</p>
