@@ -1,3 +1,30 @@
 <h1>New Sale Items</h1>
 
-<button class="btn btn-danger"><%= link_to "Upload", sale_items_path %></button>
+<%= form_for(@new_sale_item) do |f| %>
+  <div class="form-group">
+    <%= f.label :model %>
+    <%= f.text_field :model, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :set_up_rate %>
+    <%= f.integer :set_up_rate, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :daily_rate %>
+    <%= f.integer :daily_rate, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :start_date %>
+    <%= f.date :start_date, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :end_date %>
+    <%= f.date :end_date, class: 'form-control' %>
+  </div>
+
+  <%= f.submit class: 'btn btn-danger' %>
+<% end %>
