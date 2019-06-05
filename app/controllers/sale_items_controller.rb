@@ -5,7 +5,11 @@ class SaleItemsController < ApplicationController
   end
 
   def index
-    @sale_items = SaleItem.all
+    if params[:city].nil?
+      @sale_items = SaleItem.all
+    else
+      @sale_items = SaleItem.where(city: params[:city])
+    end
   end
 
   def show
