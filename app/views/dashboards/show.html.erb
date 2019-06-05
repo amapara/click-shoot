@@ -1,8 +1,25 @@
 <h1>hello <%= @user.email %></h1>
-<p> <%= @user.bookings %>
-  <%=  link_to "Message Renter", messages_show_path %>
-</p>
+<h2> User bookings </h2>
+<ol>
+    <%= @user.bookings.each do |booking| %>
+    <li>
+      <%= link_to("Message owner",messages_show_path) + booking.start_date + "---" + booking.end_date %>
+    </li>
+  <% end %>
 
-<p> <%= @user.sale_items %>
-  <%= link_to "list item", new_sale_item_path %>
-</p>
+<h2> My items bookings </h2>
+
+<ol>
+  <% @user.sale_items.each do |sale_item| %>
+    <% sale_item.booking.each do |booking| %>
+      <li>
+        <%= link_to("Message renter",messages_show_path) + booking.start_date + "---" + booking.end_date %>
+      </li>
+    <% end %>
+  <% end %>
+</ol>
+
+<h3> Ali - please clean and test </h3>
+
+
+
