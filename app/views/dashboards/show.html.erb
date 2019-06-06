@@ -1,9 +1,9 @@
-<h1><strong>hello <%= @user.email %>,</strong></h1>
+<h1><strong>Hello <%= @user.first_name %>,</strong></h1>
 <br>
 <br>
 
 
-<h2 class= "align-items text-left" style="text-decoration: underline"> User bookings: </h2>
+<h2 class= "align-items"> Your upcoming bookings: </h2>
 <br>
 
 <ul style="text-decoration: none">
@@ -13,12 +13,14 @@
     </li>
   <% end %>
 <br>
+
 <br>
-<h2 class="align-items align-right"> My items bookings </h2>
+<h2 class="align-items"> My items bookings </h2>
+<br>
 <ul style="text-decoration: none">
   <% @user.sale_items.each do |sale_item| %>
     <% sale_item.bookings.each do |booking| %>
-      <li>
+      <li style="text-decoration: none">
         <%= link_to("Message renter", messages_show_path) + booking.start_date + "---" + booking.end_date %>
       </li>
     <% end %>
