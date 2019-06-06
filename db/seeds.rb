@@ -30,8 +30,9 @@ puts 'Create 10 fake sale items'
       user: User.all.sample,
       start_date: Date.today + rand(1..30),
       end_date: Date.today + rand(31..200),
-      city: city_sample.sample
+      city: city_sample.sample,
   )
+  sale_item.remote_photo_url = "https://picsum.photos/200/300"
   sale_item.save!
 end
 
