@@ -20,29 +20,22 @@
 </div>
 
 <div class="row" id="row_cards">
-
-  <div class="col-sm-4 img-fluid">
- <!-- USE link_to on the image -->
-    <%= image_tag 'canon.jpg', class: 'card' %>
-    <div class="card-body">
-      <h5 class="card-title">Canon 345HZI</h5>
-      <p class="card-text">Dalston, London</p>
+  <% @sale_items[0..2].each do |sale_item| %>
+    <div class="col-sm-4">
+      <%= link_to sale_item_path(sale_item), class: 'card' do %>
+        <div id='random_photo' class = 'card-img-top'>
+          <%= cl_image_tag sale_item.photo, height:200, width:300, crop: :fill %>
+        </div>
+        <div class="card-body">
+          <h2> <% if sale_item.city.present? %>
+            <%= sale_item.city.capitalize %>
+              <% end %>
+            </h2>
+          <h3>Model: <%= sale_item.model %></h3>
+          <p>Daily Rate: <%= sale_item.daily_rate %>0 €</p>
+          <p>Set-Up Rate: <%= sale_item.set_up_rate %>0 €</p>
+        </div>
+      <% end %>
     </div>
-  </div>
-
-  <div class="col-sm-4  img-fluid">
-   <%= image_tag 'lumix.jpg', class: 'card' %>
-    <div class="card-body">
-      <h5 class="card-title">Lumix F4521</h5>
-      <p class="card-text">Glória, Rio de Janeiro</p>
-    </div>
-  </div>
-
-  <div class="col-sm-4 img-fluid">
-  <%= image_tag 'download.jpg', class: 'card' %>
-    <div class="card-body">
-      <h5 class="card-title">Panasonic DMC100</h5>
-      <p class="card-text">Kreuzberg, Berlin</p>
-    </div>
-  </div>
+  <% end %>
 </div>
