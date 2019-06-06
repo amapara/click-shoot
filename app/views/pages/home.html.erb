@@ -18,8 +18,12 @@
   </div>
   <button class="btn btn-primary"><%= link_to "Rent my camera to other people", pages_sell_w_us_path, id: 'buttonsale' %></button>
 </div>
+<br>
+<br>
 
-<div class="row" id="row_cards">
+<h2>Some popular recent rentals:</h2>
+
+<div class="row" id="row_cards_home">
   <% @sale_items[0..2].each do |sale_item| %>
     <div class="col-sm-4">
       <%= link_to sale_item_path(sale_item), class: 'card' do %>
