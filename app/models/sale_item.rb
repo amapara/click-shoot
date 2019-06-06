@@ -4,5 +4,4 @@ class SaleItem < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   validates :model, presence: true
-  validates :city, presence: true
 end
