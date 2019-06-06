@@ -1,11 +1,11 @@
-<h1> Cameras nearby your location: </h1>
+<h1> Cameras near you: </h1>
 <div class="row" id="row_cards">
   <% @sale_items.each do |sale_item| %>
     <div class="col-sm-4">
       <%= link_to sale_item_path(sale_item), class: 'card' do %>
         <img src="https://picsum.photos/300/200?<%= sale_item.id %>" id='random_photo' class = 'card-img-top'>
         <div class="card-body">
-          <h2><%= sale_item.city.upcase %></h2>
+          <h2><%= sale_item.city %></h2>
           <h3>Model: <%= sale_item.model %></h3>
           <p>Daily Rate: <%= sale_item.daily_rate %>0 €</p>
           <p>Set-Up Rate: <%= sale_item.set_up_rate %>0 €</p>

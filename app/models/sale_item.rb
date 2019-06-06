@@ -3,4 +3,5 @@ class SaleItem < ApplicationRecord
   has_many :bookings
 
   validates :model, presence: true
+  validates :city, presence: true
 end
