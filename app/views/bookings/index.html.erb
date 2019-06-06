@@ -1,18 +1,14 @@
 <div class= 'text-center container'>
-<h1 class='text-secondary mt-3'>Your camera is ready to be picked up!</h1>
+<h2 class='text-secondary'>Your booking is</h2>
+<h1 class= 'text-success'>CONFIRMED!</h1>
 
+<p class='text-secondary'>Find all details in your dashboard/bookings</p>
 <div class='card mt-3'>
-  <div class = 'img-fluid'>
-<%= image_tag 'canon.jpeg' %>
-  </div>
+
   <h2>Model: Canon, <%= @sale_item.model %></h2>
   <p>Daily Rate: <%= @sale_item.daily_rate %>0 €</p>
   <p>Set Up Rate: <%= @sale_item.set_up_rate %>0 €</p>
   <p><strong>Start Time: <%= @sale_item.start_date %></strong></p>
   <p><strong>End Time: <%= @sale_item.end_date %></strong></p>
-</div>
-<div class="text-center mt-3">
-  <%= link_to new_sale_item_booking_path(@sale_item) do %>
-  <button class="btn btn-primary btn-lg" type="button">Confirm and proceed to payment </button>
-  <% end %>
+
 </div>
