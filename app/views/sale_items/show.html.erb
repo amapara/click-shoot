@@ -3,7 +3,7 @@
 
 <div class='card mt-3'>
   <div class = 'img-fluid'>
-<%= cl_image_tag sale_item.photo, class: "cardimage", crop: :fill %>
+<%= cl_image_tag @sale_item.photo, class: "cardimage", crop: :fill %>
   </div>
   <h2>Model: Canon, <%= @sale_item.model %></h2>
   <p>Daily Rate: <%= @sale_item.daily_rate %>0 €</p>
