@@ -24,7 +24,7 @@
     <div class="col-sm-4">
       <%= link_to sale_item_path(sale_item), class: 'card' do %>
         <div id='random_photo' class = 'card-img-top'>
-          <%= cl_image_tag sale_item.photo, height:200, width:300, crop: :fill %>
+          <%= cl_image_tag sale_item.photo, class: "cardimage" %>
         </div>
         <div class="card-body">
           <h2> <% if sale_item.city.present? %>
