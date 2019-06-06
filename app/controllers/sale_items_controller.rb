@@ -1,5 +1,4 @@
 class SaleItemsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def show
@@ -12,7 +11,15 @@ class SaleItemsController < ApplicationController
 
   def index
     if params[:city].present?
+
+      @sale_items = SaleItem.where.not(latitude: nil, longitude: nil)
       @sale_items = SaleItem.where(city: params[:city])
+      @markers = @sale_items.map do |sale_item|
+      {
+        lat: sale_item.latitude,
+        lng: sale_item.longitude
+      }
+      end
     else
       @sale_items = SaleItem.all
     end
