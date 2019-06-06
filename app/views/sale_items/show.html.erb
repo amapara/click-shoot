@@ -12,5 +12,7 @@
   <p><strong>End Time: <%= @sale_item.end_date %></strong></p>
 </div>
 <div class="text-center mt-3">
-  <button class="btn btn-primary btn-lg" type="button">Confirm and proceed to payment</button>
+  <%= link_to new_sale_item_booking_path(@sale_item) do %>
+  <button class="btn btn-primary btn-lg" type="button">Confirm and proceed to payment </button>
+  <% end %>
 </div>

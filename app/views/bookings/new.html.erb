@@ -1,0 +1,26 @@
+<h1>New Booking</h1>
+
+<%= simple_form_for [@sale_item, @booking] do |f| %>
+  <%= f.input :pick_up_location %>
+  <%= f.input :drop_off_location %>
+  <%= f.input :start_date, as: :date, html5: true, label: 'Date from which camera rental starts' %>
+  <%= f.input :end_date, as: :date, html5: true, label: 'Date when camera rental ends' %>
+
+  <%= f.submit %>
+<% end %>
+
+<!--
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "sale_item_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "user_id"
+    t.float "total_price"
+    t.string "pick_up_location"
+    t.string "drop_off_location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sale_item_id"], name: "index_bookings_on_sale_item_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+ -->

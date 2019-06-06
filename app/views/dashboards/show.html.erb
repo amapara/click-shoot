@@ -3,6 +3,10 @@
     background-color: white;
   }
 
+<h1><strong>Hello <%= @user.first_name %>,</strong></h1>
+<br>
+<br>
+
   .avatar-div {
     display: flex;
     align-items: center;
@@ -20,13 +24,21 @@
 </style>
 
 
+<h2 class= "align-items"> Your upcoming bookings: </h2>
+<br>
+
+
 <div class="avatar-div">
 <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
 
 <h1><strong>hello <%= @user.first_name %>,</strong></h1>
 </div>
 <br>
+
 <br>
+<h2 class="align-items"> My items bookings </h2>
+<br>
+
 
 <style>
 
@@ -117,8 +129,14 @@
 
 
 
-
-
-
+<ul style="text-decoration: none">
+  <% @user.sale_items.each do |sale_item| %>
+    <% sale_item.bookings.each do |booking| %>
+      <li style="text-decoration: none">
+        <%= link_to("Message renter", messages_show_path) + booking.start_date + "---" + booking.end_date %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
 
 

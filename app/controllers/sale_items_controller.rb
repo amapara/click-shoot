@@ -32,6 +32,6 @@ class SaleItemsController < ApplicationController
   private
 
   def sale_items_params
-    params.require(:sale_item).permit(:model, :set_up_rate, :daily_rate, :start_date, :end_date, :photo)
+    params.require(:sale_item).permit(:model, :set_up_rate, :daily_rate, :start_date, :end_date, :city, :photo)
   end
 end
