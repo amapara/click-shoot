@@ -1,8 +1,8 @@
 <h1>New Booking</h1>
 
 <%= simple_form_for [@sale_item, @booking] do |f| %>
-  <%= f.input :pick_up_location %>
-  <%= f.input :drop_off_location %>
+  <%= f.input :pick_up_location, :collection => ['Corner shop', 'Post-office nearby', 'Le Wagon Office'] %>
+  <%= f.input :drop_off_location, :collection => ['Corner shop', 'Post-office nearby', 'Le Wagon Office'] %>
   <%= f.input :start_date, as: :date, html5: true, label: 'Date from which camera rental starts' %>
   <%= f.input :end_date, as: :date, html5: true, label: 'Date when camera rental ends' %>
 
