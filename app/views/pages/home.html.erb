@@ -4,19 +4,22 @@
   <h3 >click</h3>
   <h2 >click</h2>
   <h1 >shoot</h1>
+  <p>No camera? We're here to help!</p>
 </div>
 </div>
 
 <div class="container">
   <div class="row" id="row_search">
-    <div class="col-md-4 col-md-offset-3">
-      <form action="<%= sale_items_path  %>" class="search-form">
-        <input type="text" class="form-control" name="city" id="" placeholder="Search for a city">
-        <input type="submit" value = "Find your camera" class = "btn btn-primary">
+    <div class="col-md-8 col-md-offset-3">
+      <form action="<%= sale_items_path  %>" class="search-form form-inline">
+        <input type="text" class="form-control" name="city" id="searchbar" placeholder="Search for a city">
+        <input type="submit" value = "Find your camera"class = "btn btn-primary">
       </form>
     </div>
+  <div>
+  <button class="btn btn-success" id='rentother_button'><%= link_to "Rent my camera to other people", pages_sell_w_us_path, id: 'buttonsale' %></button>
+</div>
   </div>
-  <button class="btn btn-primary"><%= link_to "Rent my camera to other people", pages_sell_w_us_path, id: 'buttonsale' %></button>
 </div>
 <br>
 <br>

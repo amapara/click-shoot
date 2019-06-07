@@ -1,7 +1,9 @@
-<h1> Cameras near you: </h1>
+<h1 class='text-secondary'> Cameras near you in <%= @city.capitalize %>: </h1>
+<div class='row'>
+<div class='col-md-6'>
 <div class="row" id="row_cards">
   <% @sale_items.reverse.each do |sale_item| %>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
       <%= link_to sale_item_path(sale_item), class: 'card' do %>
         <div id='random_photo' class = 'card-img-top'>
           <%= cl_image_tag sale_item.photo, class: "cardimage", crop: :fill %>
@@ -19,7 +21,9 @@
     </div>
   <% end %>
 </div>
+</div>
 
+<div class='col-md-6'>
 <div
   id="map"
   style="width: 100%;
@@ -27,5 +31,6 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
-
+</div>
+</div>
 

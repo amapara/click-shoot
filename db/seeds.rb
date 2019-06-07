@@ -21,7 +21,7 @@ puts 'Creating 20 fake users...'
 end
 
 city_sample = ["london","paris","munich"]
-image_sample =["https://i.pinimg.com/originals/da/80/1c/da801cd9320c92b9f8424d176d2c9f4d.jpg","https://petapixel.com/assets/uploads/2016/05/two-800x533.jpg","https://nikonrumors.com/wp-content/uploads/2016/04/DSC0337-550x348.jpg","https://media.wired.com/photos/5b64db3717c26f0496f4d62d/4:3/w_700,c_limit/Canon-G7XII-SOURCE-Canon.jpg", "https://cdn.thewirecutter.com/wp-content/uploads/2018/04/canon-dslrs-march-2018-2x1-lowres3496.jpg", "https://cdn.mos.cms.futurecdn.net/ajjJB6ZAYH67XM5B3xo74G-970-80.jpg", "https://www.juzaphoto.com/shared_files/articles/canon_600_f4_is_review/juza_handholding_canon600f4is-720px.jpg"]
+image_sample =["https://img.newatlas.com/reflex-camera-2.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=62%2C0%2C874%2C491&w=616&s=3f02f39401c8ee826767d1168ce0b174","https://icdn3.digitaltrends.com/image/sony-cyber-shot-rx100-9-1500x1000.jpg", "https://cdn.pixabay.com/photo/2016/12/27/19/23/camera-1934649_960_720.jpg","https://i.pinimg.com/originals/da/80/1c/da801cd9320c92b9f8424d176d2c9f4d.jpg","https://petapixel.com/assets/uploads/2016/05/two-800x533.jpg","https://nikonrumors.com/wp-content/uploads/2016/04/DSC0337-550x348.jpg","https://media.wired.com/photos/5b64db3717c26f0496f4d62d/4:3/w_700,c_limit/Canon-G7XII-SOURCE-Canon.jpg", "https://cdn.thewirecutter.com/wp-content/uploads/2018/04/canon-dslrs-march-2018-2x1-lowres3496.jpg", "https://cdn.mos.cms.futurecdn.net/ajjJB6ZAYH67XM5B3xo74G-970-80.jpg", "https://www.juzaphoto.com/shared_files/articles/canon_600_f4_is_review/juza_handholding_canon600f4is-720px.jpg"]
 puts 'Create 10 fake sale items'
 10.times do
   sale_item = SaleItem.new(

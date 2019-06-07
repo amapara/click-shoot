@@ -11,7 +11,7 @@ class SaleItemsController < ApplicationController
 
   def index
     if params[:city].present?
-
+      @city = params[:city]
       @sale_items = SaleItem.where.not(latitude: nil, longitude: nil)
       @sale_items = SaleItem.where(city: params[:city])
       @markers = @sale_items.map do |sale_item|
