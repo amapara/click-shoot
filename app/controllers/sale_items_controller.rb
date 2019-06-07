@@ -22,6 +22,13 @@ class SaleItemsController < ApplicationController
       end
     else
       @sale_items = SaleItem.all
+      @markers = @sale_items.map do |sale_item|
+      {
+        lat: sale_item.latitude,
+        lng: sale_item.longitude
+      }
+      end
+
     end
   end
 

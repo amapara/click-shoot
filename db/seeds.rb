@@ -21,6 +21,7 @@ puts 'Creating 20 fake users...'
 end
 
 city_sample = ["london","paris","munich"]
+image_sample =["https://i.pinimg.com/originals/da/80/1c/da801cd9320c92b9f8424d176d2c9f4d.jpg","https://petapixel.com/assets/uploads/2016/05/two-800x533.jpg","https://nikonrumors.com/wp-content/uploads/2016/04/DSC0337-550x348.jpg","https://media.wired.com/photos/5b64db3717c26f0496f4d62d/4:3/w_700,c_limit/Canon-G7XII-SOURCE-Canon.jpg", "https://cdn.thewirecutter.com/wp-content/uploads/2018/04/canon-dslrs-march-2018-2x1-lowres3496.jpg", "https://cdn.mos.cms.futurecdn.net/ajjJB6ZAYH67XM5B3xo74G-970-80.jpg", "https://www.juzaphoto.com/shared_files/articles/canon_600_f4_is_review/juza_handholding_canon600f4is-720px.jpg"]
 puts 'Create 10 fake sale items'
 10.times do
   sale_item = SaleItem.new(
@@ -32,7 +33,7 @@ puts 'Create 10 fake sale items'
       end_date: Date.today + rand(31..200),
       city: city_sample.sample,
   )
-  sale_item.remote_photo_url = "https://picsum.photos/200/300"
+  sale_item.remote_photo_url = image_sample.sample
   sale_item.save!
 end
 
