@@ -35,3 +35,4 @@ gem 'devise'
 gem 'searchkick', '~> 3.0'
 
 gem 'bootstrap', '~> 4.3.1'
+gem 'geocoder'
