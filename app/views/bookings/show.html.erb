@@ -9,7 +9,7 @@
   <p>Daily Rate: <%= @sale_item.daily_rate %>0 €</p>
   <p>Set Up Rate: <%= @sale_item.set_up_rate %>0 €</p>
   <p><strong>Total cost: <%= @booking.total_price %>0 €</strong></p>
-  <p><strong>Start Time: <%= @booking.start_date %></strong></p>
-  <p><strong>End Time: <%= @booking.end_date %></strong></p>
+  <p><strong>Start Time: <%= @booking.start_date.strftime("%A, %b %d") %></strong></p>
+  <p><strong>End Time: <%= @booking.end_date.strftime("%A, %b %d") %></strong></p>
 
 </div>

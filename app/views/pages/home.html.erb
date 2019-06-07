@@ -1,5 +1,3 @@
-
-
 <div class="banner flex-center" style = "background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'banner.jpg' %>);">
   <h3 >click</h3>
   <h2 >click</h2>
@@ -10,6 +8,7 @@
 
 <div class="container">
   <div class="row" id="row_search">
+
     <div class="col-md-8 col-md-offset-3">
       <form action="<%= sale_items_path  %>" class="search-form form-inline">
         <input type="text" class="form-control" name="city" id="searchbar" placeholder="Search for a city">
@@ -24,7 +23,7 @@
 <br>
 <br>
 
-<h2>Some popular recent rentals:</h2>
+<h2>Popular recent rentals:</h2>
 
 <div class="row" id="row_cards_home">
   <% @sale_items[0..2].each do |sale_item| %>
