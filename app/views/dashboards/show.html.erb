@@ -89,7 +89,7 @@
               <% sale_item.bookings.each do |booking| %>
                <tr>
                   <td> <%= sale_item.model.capitalize %> </td>
-                  <td> <%= booking.start_date %> <%= "---" %> <%= booking.end_date %> </td>
+                  <td> <%= booking.start_date.strftime("%A, %b %d") %> <%= "---" %> <%= booking.end_date.strftime("%A, %b %d") %> </td>
                   <td> <%= link_to("#{booking.user.first_name}", messages_show_path) %></td>
               </tr>
               <% end %>
@@ -118,7 +118,7 @@
             <tr>
             <td> <%= booking.sale_item.model %></td>
             <td> <%= booking.sale_item.city %> </td>
-            <td> <%= booking.start_date %> <%= "---" %> <%= booking.end_date %> </td>
+            <td> <%= booking.start_date.strftime("%A, %b %d") %> <%= "---" %> <%= booking.end_date.strftime("%A, %b %d") %> </td>
             <td> <%=  link_to("#{booking.sale_item.user.first_name}", messages_show_path) %> </td>
             </tr>
         <% end %>
