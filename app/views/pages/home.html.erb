@@ -1,5 +1,3 @@
-
-
 <div class="banner flex-center" style = "background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'banner.jpg' %>);">
   <h3 >click</h3>
   <h2 >click</h2>
@@ -12,16 +10,18 @@
     <div class="col-md-4 col-md-offset-3">
       <form action="<%= sale_items_path  %>" class="search-form">
         <input type="text" class="form-control" name="city" id="" placeholder="Search for a city">
+        <br>
         <input type="submit" value = "Find your camera" class = "btn btn-primary">
       </form>
     </div>
   </div>
+  <br>
   <button class="btn btn-primary"><%= link_to "Rent my camera to other people", pages_sell_w_us_path, id: 'buttonsale' %></button>
 </div>
 <br>
 <br>
 
-<h2>Some popular recent rentals:</h2>
+<h2>Popular recent rentals:</h2>
 
 <div class="row" id="row_cards_home">
   <% @sale_items[0..2].each do |sale_item| %>
