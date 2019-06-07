@@ -74,12 +74,12 @@
 <div id="parent">
 
 <div class="border border-light shadow p-3 mb-5 bg-white rounded" id="left">
-  <h2 style="text-decoration: underline"> Your listings </h2>
+  <h2 style="text-decoration: underline"> Bookings for your camera </h2>
   <br>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">City</th>
+      <th scope="col">Model</th>
       <th scope="col">Lease Dates</th>
       <th scope="col">Contact Tenant</th>
     </tr>
@@ -88,9 +88,9 @@
         <% @user.sale_items.each do |sale_item| %>
               <% sale_item.bookings.each do |booking| %>
                <tr>
-                  <td> <%= sale_item.city.capitalize %> </td>
+                  <td> <%= sale_item.model.capitalize %> </td>
                   <td> <%= booking.start_date %> <%= "---" %> <%= booking.end_date %> </td>
-                  <td> <%= link_to("#{@user.first_name}", messages_show_path) %></td>
+                  <td> <%= link_to("#{booking.user.first_name}", messages_show_path) %></td>
               </tr>
               <% end %>
             <% end %>
@@ -106,8 +106,8 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">PickUp'ed @</th>
-      <th scope="col">DropOff @</th>
+      <th scope="col">Model</th>
+      <th scope="col">City</th>
       <th scope="col">Lease Dates</th>
       <th scope="col">Contact Owner</th>
     </tr>
@@ -116,10 +116,10 @@
 
 <% @user.bookings.each do |booking| %>
             <tr>
-            <td> <%= booking.pick_up_location %></td>
-            <td> <%= booking.drop_off_location %> </td>
+            <td> <%= booking.sale_item.model %></td>
+            <td> <%= booking.sale_item.city %> </td>
             <td> <%= booking.start_date %> <%= "---" %> <%= booking.end_date %> </td>
-            <td> <%=  link_to("#{@user.first_name}", messages_show_path) %> </td>
+            <td> <%=  link_to("#{booking.sale_item.user.first_name}", messages_show_path) %> </td>
             </tr>
         <% end %>
   </tbody>
@@ -129,14 +129,5 @@
 
 
 
-<ul style="text-decoration: none">
-  <% @user.sale_items.each do |sale_item| %>
-    <% sale_item.bookings.each do |booking| %>
-      <li style="text-decoration: none">
-        <%= link_to("Message renter", messages_show_path) + booking.start_date + "---" + booking.end_date %>
-      </li>
-    <% end %>
-  <% end %>
-</ul>
 
 
